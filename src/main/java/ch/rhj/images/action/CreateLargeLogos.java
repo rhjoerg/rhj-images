@@ -21,7 +21,7 @@ import javax.imageio.ImageIO;
 
 import ch.rhj.images.Fonts;
 
-public class CreateLogo implements Runnable {
+public class CreateLargeLogos implements Runnable {
 
 	public final static String FONT_NAME = "Neue Haas Grotesk Text Pro";
 
@@ -35,14 +35,14 @@ public class CreateLogo implements Runnable {
 
 	private final Font font = Fonts.getFont(FONT_NAME);
 
-	public CreateLogo(Path directory) {
+	public CreateLargeLogos(Path directory) {
 
 		this.directory = directory;
 	}
 
-	public static CreateLogo createLogo(Path directory) {
+	public static CreateLargeLogos createLargeLogos(Path directory) {
 
-		return new CreateLogo(directory);
+		return new CreateLargeLogos(directory);
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class CreateLogo implements Runnable {
 
 		try {
 
-			System.out.println("creating logos");
+			System.out.println("creating large logos");
 
 			if (checkFont()) {
 
