@@ -1,4 +1,4 @@
-package ch.rhj.images.actions;
+package ch.rhj.images.action;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
