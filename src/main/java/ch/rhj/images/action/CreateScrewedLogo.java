@@ -32,6 +32,8 @@ public class CreateScrewedLogo implements Runnable {
 
 		try {
 
+			System.out.println("creating screwed logos");
+
 			if (checkFont()) {
 
 				Files.createDirectories(directory);

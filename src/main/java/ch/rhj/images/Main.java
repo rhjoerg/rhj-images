@@ -1,5 +1,6 @@
 package ch.rhj.images;
 
+import static ch.rhj.images.action.CreateLogo.createLogo;
 import static ch.rhj.images.action.CreateScrewedLogo.createScrewedLogo;
 
 import java.nio.file.Files;
@@ -14,6 +15,9 @@ public class Main {
 
 		Files.createDirectories(directory);
 
+		Fonts.availableFontNames().forEach(name -> System.out.println(name));
+
 		createScrewedLogo(directory.resolve("screwed-logo")).run();
+		createLogo(directory.resolve("logo")).run();
 	}
 }
