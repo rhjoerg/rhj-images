@@ -1,7 +1,8 @@
 package ch.rhj.images;
 
 import static ch.rhj.images.action.CreateLargeLogos.createLargeLogos;
-import static ch.rhj.images.action.CreateScrewedLogo.createScrewedLogo;
+import static ch.rhj.images.action.CreateScrewedLogos.createScrewedLogos;
+import static ch.rhj.images.action.CreateSmallLogos.createSmallLogos;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -15,9 +16,8 @@ public class Main {
 
 		Files.createDirectories(directory);
 
-		Fonts.availableFontNames().forEach(name -> System.out.println(name));
-
-		createScrewedLogo(directory.resolve("screwed-logo")).run();
+		createScrewedLogos(directory.resolve("screwed-logo")).run();
 		createLargeLogos(directory.resolve("logo")).run();
+		createSmallLogos(directory.resolve("logo")).run();
 	}
 }

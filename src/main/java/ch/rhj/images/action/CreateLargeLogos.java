@@ -1,11 +1,13 @@
 package ch.rhj.images.action;
 
+import static ch.rhj.images.Colors.MIDNIGHT;
+import static ch.rhj.images.Colors.TRANSPARENT;
+import static ch.rhj.images.Colors.WHITE;
 import static java.awt.RenderingHints.KEY_ANTIALIASING;
 import static java.awt.RenderingHints.VALUE_ANTIALIAS_ON;
 import static java.awt.image.BufferedImage.TYPE_INT_ARGB;
 import static java.lang.String.format;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
@@ -24,15 +26,9 @@ import ch.rhj.images.Fonts;
 public class CreateLargeLogos implements Runnable {
 
 	public final static String FONT_NAME = "Neue Haas Grotesk Text Pro";
-
-	public final static Color TRANSPARENT = new Color(0, 0, 0, 0);
-	public final static Color MIDNIGHT = new Color(25, 25, 112, 255);
-	public final static Color WHITE = new Color(255, 255, 255, 255);
-
 	public final static String INITIALS = "RJ";
 
 	private final Path directory;
-
 	private final Font font = Fonts.getFont(FONT_NAME);
 
 	public CreateLargeLogos(Path directory) {
@@ -119,7 +115,7 @@ public class CreateLargeLogos implements Runnable {
 		Font fullFont = font.deriveFont(fullScale);
 		FontMetrics fullMetrics = graphics.getFontMetrics(fullFont);
 		int fullWith = fullMetrics.stringWidth(INITIALS);
-		float scale = fullScale * size * 6 / 8 / fullWith;
+		float scale = fullScale * size * 5.5f / 8 / fullWith;
 		Font scaledFont = font.deriveFont(scale);
 
 		graphics.setFont(scaledFont);
