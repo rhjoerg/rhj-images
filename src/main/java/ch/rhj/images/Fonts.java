@@ -3,6 +3,8 @@ package ch.rhj.images;
 import static java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment;
 
 import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
 import java.util.stream.Stream;
 
@@ -46,5 +48,17 @@ public interface Fonts {
 	public static Font getFont(String name) {
 
 		return getFont(getLocalGraphicsEnvironment(), name);
+	}
+
+	public static Font scaleFont(Graphics2D graphics, Font font, String string, int width) {
+
+		float tempScale = width * 4;
+		Font tempFont = font.deriveFont(tempScale);
+		FontMetrics tempMetrics = graphics.getFontMetrics(tempFont);
+		int tempWidth = tempMetrics.stringWidth(string);
+
+		float scale = (tempScale * width) / tempWidth;
+
+		return font.deriveFont(scale);
 	}
 }

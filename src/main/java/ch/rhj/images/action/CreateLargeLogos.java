@@ -90,10 +90,7 @@ public class CreateLargeLogos implements Runnable {
 
 		Graphics2D graphics = image.createGraphics();
 
-		if (size > 48) {
-
-			graphics.setRenderingHint(KEY_ANTIALIASING, VALUE_ANTIALIAS_ON);
-		}
+		graphics.setRenderingHint(KEY_ANTIALIASING, VALUE_ANTIALIAS_ON);
 
 		return graphics;
 	}
@@ -118,6 +115,7 @@ public class CreateLargeLogos implements Runnable {
 		float scale = fullScale * size * 5.5f / 8 / fullWith;
 		Font scaledFont = font.deriveFont(scale);
 
+		graphics.setFont(Fonts.scaleFont(graphics, font, INITIALS, Math.round(size * 5.5f / 8f)));
 		graphics.setFont(scaledFont);
 		graphics.setColor(WHITE);
 
