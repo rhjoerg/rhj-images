@@ -38,25 +38,7 @@
 	</repositories>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-all -->
-		<dependency>
-			<groupId>org.apache.xmlgraphics</groupId>
-			<artifactId>batik-all</artifactId>
-			<version>1.13</version>
-			<type>pom</type>
-			<exclusions>
-				<exclusion>
-					<groupId>xml-apis</groupId>
-					<artifactId>xml-apis</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.dataformat</groupId>
-			<artifactId>jackson-dataformat-xml</artifactId>
-			<version>2.11.0</version>
-		</dependency>
+		<!-- https://repository.mulesoft.org/nexus/content/repositories/public/com/github/imcdonagh/image4j/ -->
 		<dependency>
 			<groupId>com.github.imcdonagh</groupId>
 			<artifactId>image4j</artifactId>
